@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abietar Motor | Stock Premium Albacete</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;900&display=swap');
+        
+        body { background-color: #0a0a0a; font-family: 'Outfit', sans-serif; color: white; scroll-behavior: smooth; }
+        
+        .view { display: none; }
+        .view.active { display: block; animation: slideUp 0.5s ease-out; }
+
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        .moto-card {
+            background: linear-gradient(145deg, #151515, #0a0a0a);
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .moto-card:hover { border-color: #e30613; transform: scale(1.02); box-shadow: 0 30px 60px -12px rgba(227, 6, 19, 0.25); }
+
+        .badge-ocasion {
+            background: linear-gradient(90deg, #e30613, #9e040d);
+            box-shadow: 0 4px 15px rgba(227, 6, 19, 0.4);
+        }
+
+        .filter-btn.active { background-color: #e30613; color: white; border-color: #e30613; }
+    </style>
+</head>
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/5 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div onclick="irA('inicio')" class="text-2xl font-black tracking-tighter cursor-pointer">
+                ABIETAR<span class="text-red-600 italic">MOTOR</span>
+            </div>
+            <div class="flex gap-6 items-center">
+                <button onclick="irA('ocasion')" class="text-xs font-bold uppercase tracking-widest hover:text-red-600 transition">Ocasión</button>
+                <a href="https://wa.me/34600000000" class="bg-red-600 px-5 py-2 rounded-full text-[10px] font-black uppercase">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- INICIO -->
+    <div id="inicio" class="view active pt-32 px-6">
+        <div class="max-w-7xl mx-auto text-center py-20">
+            <h1 class="text-6xl md:text-9xl font-black uppercase leading-none mb-6">MÁS QUE <br><span class="text-red-600">MOTOS</span></h1>
+            <p class="text-gray-400 text-lg md:text-2xl mb-12 max-w-2xl mx-auto">Concesionario Oficial en Albacete. Especialistas en Kymco, Rieju y una selección premium de ocasión.</p>
+            
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div onclick="irA('ocasion')" class="moto-card p-12 rounded-[2rem] cursor-pointer group">
+                    <i class="fa-solid fa-motorcycle text-4xl mb-4 group-hover:text-red-600 transition"></i>
+                    <h3 class="text-2xl font-black uppercase">Stock Ocasión</h3>
+                    <p class="text-gray-500 text-sm mt-2">Unidades revisadas con garantía Abietar.</p>
+                </div>
+                <div class="moto-card p-12 rounded-[2rem] opacity-50">
+                    <i class="fa-solid fa-tools text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-black uppercase">Taller Oficial</h3>
+                    <p class="text-gray-500 text-sm mt-2">Próximamente cita online.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN OCASIÓN (Solución al fallo de Motos.net) -->
+    <div id="ocasion" class="view pt-32 px-6 pb-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <span class="text-red-600 font-black uppercase tracking-[0.3em] text-xs">Abietar Selection</span>
+                    <h2 class="text-5xl font-black uppercase italic">Motos de Ocasión</h2>
+                </div>
+                <div class="flex gap-2">
+                    <button class="filter-btn active border border-white/10 px-4 py-2 rounded-lg text-xs font-bold uppercase">Todas</button>
+                    <button class="filter-btn border border-white/10 px-4 py-2 rounded-lg text-xs font-bold uppercase">Scooter</button>
+                    <button class="filter-btn border border-white/10 px-4 py-2 rounded-lg text-xs font-bold uppercase">Trail</button>
+                </div>
+            </div>
+
+            <!-- GRID DE MOTOS INTEGRADO -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- MOTO 1 -->
+                <div class="moto-card rounded-[2.5rem] overflow-hidden group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 left-4 badge-ocasion text-[10px] font-black px-3 py-1 rounded-full uppercase">Garantía 12 Meses</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-black uppercase">Kymco AK 550</h3>
+                                <p class="text-gray-500 text-xs font-bold uppercase">Año 2022 • 12.400 km</p>
+                            </div>
+                            <div class="text-2xl font-black text-red-600 italic">7.490€</div>
+                        </div>
+                        <div class="flex gap-2 mb-6">
+                            <span class="bg-white/5 px-2 py-1 rounded text-[9px] font-bold uppercase text-gray-400 italic">Etiqueta C</span>
+                            <span class="bg-white/5 px-2 py-1 rounded text-[9px] font-bold uppercase text-gray-400 italic">Revisiones al día</span>
+                        </div>
+                        <a href="https://wa.me/34600000000?text=Hola, estoy interesado en la Kymco AK 550" class="block w-full bg-white text-black text-center py-4 rounded-2xl font-black uppercase text-xs hover:bg-red-600 hover:text-white transition">Me interesa</a>
+                    </div>
+                </div>
+
+                <!-- MOTO 2 -->
+                <div class="moto-card rounded-[2.5rem] overflow-hidden group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?auto=format&fit=crop&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 left-4 badge-ocasion text-[10px] font-black px-3 py-1 rounded-full uppercase">Oportunidad</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-black uppercase">Benelli TRK 502 X</h3>
+                                <p class="text-gray-500 text-xs font-bold uppercase">Año 2023 • 5.200 km</p>
+                            </div>
+                            <div class="text-2xl font-black text-red-600 italic">5.900€</div>
+                        </div>
+                        <div class="flex gap-2 mb-6">
+                            <span class="bg-white/5 px-2 py-1 rounded text-[9px] font-bold uppercase text-gray-400 italic">Apta A2</span>
+                            <span class="bg-white/5 px-2 py-1 rounded text-[9px] font-bold uppercase text-gray-400 italic">Full Equip</span>
+                        </div>
+                        <a href="https://wa.me/34600000000" class="block w-full bg-white text-black text-center py-4 rounded-2xl font-black uppercase text-xs hover:bg-red-600 hover:text-white transition">Me interesa</a>
+                    </div>
+                </div>
+
+                <!-- MOTO 3 -->
+                <div class="moto-card rounded-[2.5rem] overflow-hidden group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1614165933388-9b552e8b83f0?auto=format&fit=crop&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 left-4 badge-ocasion text-[10px] font-black px-3 py-1 rounded-full uppercase">Liquidación</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-black uppercase">Rieju MRT 50 SM</h3>
+                                <p class="text-gray-500 text-xs font-bold uppercase">Nueva a Estrenar</p>
+                            </div>
+                            <div class="text-2xl font-black text-red-600 italic">3.150€</div>
+                        </div>
+                        <div class="flex gap-2 mb-6">
+                            <span class="bg-white/5 px-2 py-1 rounded text-[9px] font-bold uppercase text-gray-400 italic">Sin Matricular</span>
+                            <span class="bg-white/5 px-2 py-1 rounded text-[9px] font-bold uppercase text-gray-400 italic">Entrega Inmediata</span>
+                        </div>
+                        <a href="https://wa.me/34600000000" class="block w-full bg-white text-black text-center py-4 rounded-2xl font-black uppercase text-xs hover:bg-red-600 hover:text-white transition">Me interesa</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-20 text-center">
+                <p class="text-gray-500 text-sm mb-6 font-bold uppercase tracking-widest">¿Buscas un modelo concreto?</p>
+                <a href="tel:+34967000000" class="inline-flex items-center gap-4 bg-zinc-900 border border-white/10 px-8 py-4 rounded-full font-black uppercase text-xs hover:bg-red-600 transition">
+                    Llamar al Concesionario <i class="fa-solid fa-phone"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function irA(id) {
+            document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>
